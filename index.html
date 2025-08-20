@@ -98,115 +98,143 @@
     class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 gradient-bg transition-colors duration-300"
   >
     
+    <header id="mobile-header" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white" data-key="logo">
+                <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span>kimdev<span class="text-violet-500">here</span></span>
+            </a>
+            <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-nav-menu" class="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute top-0 right-0 w-64 h-full bg-white dark:bg-slate-900 transform translate-x-full transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="#home" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white" data-key="logo">
+                        <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>kimdev<span class="text-violet-500">here</span></span>
+                    </a>
+                    <button id="mobile-nav-close" class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Close mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="#home" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navHome">Trang chủ</a>
+                    <a href="#skills" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navSkills">Kỹ năng</a>
+                    <a href="#projects" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navProjects">Dự án</a>
+                    <a href="#services" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navServices">Dịch vụ</a>
+                    <a href="#store" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navStore">Cửa hàng</a>
+                    <a href="#about" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navAbout">Giới thiệu</a>
+                    <a href="#contact" class="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" data-key="navContact">Liên hệ</a>
+                </nav>
+                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                    <button id="mobile-theme-toggle" class="w-full flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-violet-500 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg p-3 transition-colors">
+                        <svg id="mobile-theme-toggle-dark-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                        </svg>
+                        <svg id="mobile-theme-toggle-light-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.95-4.243-1.59-1.59M3 12h2.25m.386-6.364 1.591 1.591M12 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                        </svg>
+                        <span class="nav-text">Theme</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden md:block" id="spotlight"></div>
+    ...
+    
     <div class="hidden md:block" id="spotlight"></div>   
-    <header id="sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 transition-all duration-300 lg:translate-x-0">
+    <header id="sidebar" class="fixed top-0 left-0 z-50 w-64 h-screen bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-r border-slate-200 dark:border-slate-800 transition-transform duration-300 -translate-x-full hidden lg:flex lg:translate-x-0">
     <div class="flex flex-col h-full p-4 overflow-y-auto">
-        <a href="#" class="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-10 px-2 flex-shrink-0" data-key="logo">
-            <svg class="w-8 h-8 text-violet-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            <span id="logo-text" class="nav-text">kimdev<span class="text-violet-500 dark:text-violet-400">here</span></span>
+        <a href="#home" class="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-10 px-2 flex-shrink-0" data-key="logo">
+          <svg class="w-8 h-8 text-violet-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+          <span id="logo-text" class="nav-text">kimdev<span class="text-violet-500 dark:text-violet-400">here</span></span>
         </a>
 
         <nav id="sidebar-nav" class="flex flex-col gap-2 flex-grow">
-            <a href="#home" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z"></path><path d="M12 5.432l8.159 8.159c.026.026.05.054.07.084v6.101a2.25 2.25 0 01-2.25 2.25H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.25a2.25 2.25 0 01-2.25-2.25v-6.101c.02-.03.044-.058.07-.084L12 5.432z"></path></svg><span class="nav-text" data-key="navHome">Trang chủ</span></a>
-            <a href="#skills" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M4.5 3.75A2.25 2.25 0 002.25 6v12A2.25 2.25 0 004.5 20.25h15A2.25 2.25 0 0021.75 18V6A2.25 2.25 0 0019.5 3.75h-15zM8.38 8.159a.75.75 0 00-1.06 1.061l1.22 1.22-1.22 1.22a.75.75 0 101.06 1.061l1.75-1.75a.75.75 0 000-1.06l-1.75-1.75zm3.59.09a.75.75 0 011.06 0l1.75 1.75a.75.75 0 010 1.06l-1.75 1.75a.75.75 0 11-1.06-1.06l1.22-1.22-1.22-1.22a.75.75 0 010-1.061z" clip-rule="evenodd"></path></svg><span class="nav-text" data-key="navSkills">Kỹ năng</span></a>
-            <a href="#projects" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25zM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 116.75 0h.375c1.035 0 1.875-.84 1.875-1.875V15z"></path><path d="M16.5 6.375a1.875 1.875 0 00-1.875-1.875h-1.5a1.875 1.875 0 00-1.875 1.875v11.25c0 1.035.84 1.875 1.875 1.875h1.5a1.875 1.875 0 001.875-1.875V6.375z"></path><path d="M20.25 7.5a.75.75 0 00-.75.75v6a.75.75 0 001.5 0v-6a.75.75 0 00-.75-.75z"></path></svg><span class="nav-text" data-key="navProjects">Dự án</span></a>
-            <a href="#services" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 hidden lg:flex"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M1.5 7.125c0-1.036.84-1.875 1.875-1.875h6.375c1.036 0 1.875.84 1.875 1.875v3.375c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 10.5V7.125zm11.25 0c0-1.036.84-1.875 1.875-1.875h6.375c1.035 0 1.875.84 1.875 1.875v3.375c0 1.036-.84 1.875-1.875 1.875h-6.375a1.875 1.875 0 01-1.875-1.875V7.125zM1.5 16.125c0-1.036.84-1.875 1.875-1.875h6.375c1.036 0 1.875.84 1.875 1.875v.375c0 1.036-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 011.5 16.5v-.375zm11.25 0c0-1.036.84-1.875 1.875-1.875h6.375c1.035 0 1.875.84 1.875 1.875v.375c0 1.036-.84 1.875-1.875 1.875h-6.375a1.875 1.875 0 01-1.875-1.875V7.125z" clip-rule="evenodd"></path></svg><span class="nav-text" data-key="navServices">Dịch vụ</span></a>
-            <a href="#store" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 hidden lg:flex"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M2.25 2.25a.75.75 0 000 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 00-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 000-1.5H5.378A2.25 2.25 0 017.5 15h11.218a.75.75 0 00.674-.421 60.358 60.358 0 002.46-5.232.75.75 0 00-.674-.978H5.982l-2.75-10.313A.75.75 0 002.25 2.25zM9 18.75A.75.75 0 117.5 18a.75.75 0 011.5 0zM18.75 18a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg><span class="nav-text" data-key="navStore">Cửa hàng</span></a>
-            <a href="#about" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5 hidden lg:flex"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd"></path></svg><span class="nav-text" data-key="navAbout">Giới thiệu</span></a>
-            <a href="#contact" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/5"><svg class="w-5 h-5 flex-shrink-0 text-gray-500 group-hover:text-gray-800 dark:text-white/80 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"></path><path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"></path></svg><span class="nav-text" data-key="navContact">Liên hệ</span></a>
+            <a href="#home" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5"/></svg><span class="nav-text" data-key="navHome">Trang chủ</span></a>
+            <a href="#skills" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.125 1.125 0 0 1 0 2.25H5.625a1.125 1.125 0 0 1 0-2.25Z"/></svg><span class="nav-text" data-key="navSkills">Kỹ năng</span></a>
+            <a href="#projects" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L12 15.25l5.571-3M6.429 9.75 12 12m0 0 5.571 3"/></svg><span class="nav-text" data-key="navProjects">Dự án</span></a>
+            <a href="#services" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg><span class="nav-text" data-key="navServices">Dịch vụ</span></a>
+            <a href="#store" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l.383-1.437M7.5 14.25 5.106 5.165A2.25 2.25 0 0 0 2.894 3H2.25"/></svg><span class="nav-text" data-key="navStore">Cửa hàng</span></a>
+            <a href="#about" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/></svg><span class="nav-text" data-key="navAbout">Giới thiệu</span></a>
+            <a href="#contact" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"><svg class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg><span class="nav-text" data-key="navContact">Liên hệ</span></a>
         </nav>
 
         <div id="sidebar-controls" class="mt-auto flex flex-col gap-2 flex-shrink-0">
-             <div class="relative hidden lg:block">
-                <button id="lang-switcher-button" type="button" class="w-full flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
-                    <span id="lang-switcher-flag" class="text-xl font-semibold"></span>
+             <div class="relative">
+                <button id="lang-switcher-button" type="button" class="w-full flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 font-semibold rounded-lg text-sm p-2.5">
+                    <span id="lang-switcher-flag" class="text-base"></span>
                     <span class="nav-text" id="lang-switcher-text"></span>
                     <svg class="w-4 h-4 nav-text ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="lang-switcher-dropdown" class="hidden absolute bottom-full mb-2 w-full bg-white dark:bg-slate-800 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
-                    <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="vi"><span>VI</span> Vietnamese</a>
-                    <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="en"><span>EN</span> English</a>
-                    <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="ja"><span>JP</span> 日本語</a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="vi"><span class="w-6">🇻🇳</span> Vietnamese</a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="en"><span class="w-6">🇺🇸</span> English</a>
+                    <a href="#" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="ja"><span class="w-6">🇯🇵</span> 日本語</a>
                 </div>
             </div>
 
             <button id="theme-toggle" type="button" class="w-full flex items-center justify-between text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    <span class="nav-text lg:hidden">Chế độ</span>
-                </div>
-                <div class="flex items-center">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                <div class="flex items-center gap-2 font-semibold">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.95-4.243-1.59-1.59M3 12h2.25m.386-6.364 1.591 1.591M12 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+                    <span class="nav-text">Theme</span>
                 </div>
             </button>
-
-             <button id="sidebar-toggle" type="button" class="hidden lg:flex w-full items-center justify-between text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
-                <div class="flex items-center gap-2">
-                    <svg class="w-5 h-5 collapse-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
-                    <svg class="w-5 h-5 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
-                    <span class="nav-text"></span>
+             <!-- <button id="sidebar-toggle" type="button" class="hidden lg:flex w-full items-center justify-between text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
+                <div class="flex items-center gap-2 font-semibold">
+                    <svg class="w-5 h-5 collapse-icon" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" /></svg>
+                    <svg class="w-5 h-5 expand-icon" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 4.5l7.5 7.5-7.5 7.5m6-15l7.5 7.5-7.5 7.5" /></svg>
+                    <span class="nav-text">Thu gọn</span>
                 </div>
-            </button>
+            </button> -->
         </div>
     </div>
 </header>
-    <!-- Mobile Menu Burger -->
-    <button
-      class="lg:hidden fixed top-4 left-4 z-50 bg-white/80 dark:bg-slate-900/30 backdrop-blur-sm p-2 rounded-md"
-      id="mobile-menu-button"
-    >
-      <svg
-        class="h-6 w-6 text-slate-800 dark:text-white"
-        fill="none"
-        stroke="currentColor"
-        viewbox="0 0 24 24"
-      >
-        <path
-          d="M4 6h16M4 12h16m-7 6h7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-        ></path>
-      </svg>
-    </button>
-    <!-- Overlay for mobile -->
-    <div
-      class="lg:hidden hidden fixed inset-0 z-30 bg-black/50"
-      id="sidebar-overlay"
-    ></div>
-    <!-- ===== MAIN CONTENT ===== -->
-    <div class="lg:ml-64 transition-all duration-300" id="main-content">
-      <main class="container mx-auto px-4 pt-12 lg:pt-0">
-        <!-- ===== HERO SECTION (REVISED) ===== -->
-        <section class="min-h-screen flex items-center" id="home">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <!-- Left Column: Text Content -->
-            <div class="text-center lg:text-left lg:ml-20">
+    
+    <div class="ml-0 lg:ml-64 pt-16 lg:pt-0 pb-24 lg:pb-0 transition-all duration-300" id="main-content">
+      <main class="container mx-auto px-4 lg:pt-0">
+        <section class="flex items-center py-16 lg:py-0 min-h-[85dvh] lg:min-h-screen hero-section" id="home">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+            <div class="text-center lg:text-left mx-auto lg:mx-0 hero-content">
               <p
                 class="h-7 text-violet-500 dark:text-violet-400 font-semibold text-lg mb-2"
               >
-                <span data-key="heroSubtitle"></span
+                <span data-key="heroSubtitle">Lập trình viên Web & UI/UX Designer</span
                 ><span class="ml-1" id="typing-cursor">|</span>
               </p>
               <h1
                 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-4 mb-6 leading-tight animated-gradient-text"
                 data-key="heroTitle"
               >
-                Biến ý tưởng thành giải pháp số.
               </h1>
               <p
                 class="text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10"
                 data-key="heroDescription"
               >
-                Chuyên gia phát triển web và thiết kế UI/UX, tập trung vào việc
-                tạo ra các sản phẩm trực quan, hiệu quả và có tính thẩm mỹ cao.
               </p>
               <div
                 class="flex flex-wrap justify-center lg:justify-start items-center gap-4"
               >
                 <a
-                  class="inline-flex items-center justify-center gap-2 bg-violet-500 hover:bg-violet-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-violet-500/20"
+                  class="btn btn-primary px-8 py-3 shadow-lg shadow-violet-500/20"
                   href="#projects"
                 >
                   <svg
@@ -222,10 +250,10 @@
                       stroke-width="2"
                     ></path>
                   </svg>
-                  <span data-key="heroBtnProjects">Xem dự án</span>
+                  <span data-key="heroBtnProjects"></span>
                 </a>
                 <a
-                  class="inline-flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold px-8 py-3 rounded-lg transition-colors duration-300"
+                  class="btn btn-secondary hover-lift"
                   href="#contact"
                 >
                   <svg
@@ -241,237 +269,130 @@
                       stroke-width="2"
                     ></path>
                   </svg>
-                  <span data-key="heroBtnContact">Liên hệ</span>
+                  <span data-key="heroBtnContact"></span>
                 </a>
               </div>
             </div>
-            <!-- Right Column: 3D Graphic -->
-            <div class="hidden lg:block w-full h-full min-h-[400px]">
+            <div class="hero-canvas-container hidden lg:block w-full h-full min-h-[400px]">
               <canvas id="hero-canvas"></canvas>
             </div>
           </div>
         </section>
-        <!-- ===== SKILLS SECTION ===== -->
         <section class="py-20 lg:py-24" id="skills">
           <div class="text-center mb-12">
             <h2
               class="text-4xl font-bold text-slate-900 dark:text-white"
               data-key="skillsTitle"
             >
-              Bộ công cụ của tôi
             </h2>
             <p
               class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto"
               data-key="skillsSubtitle"
             >
-              Các công nghệ và công cụ tôi sử dụng để biến ý tưởng thành hiện
-              thực.
             </p>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
-            >
-              <svg
-                class="w-12 h-12 text-sky-500"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>React</title>
-                <path
-                  d="M12.001 2.002c-5.524 0-10.001 4.476-10.001 10s4.477 10 10.001 10c5.523 0 9.999-4.476 9.999-10s-4.476-10-9.999-10zm0 18.002c-4.412 0-8.001-3.588-8.001-8.001s3.589-8 8.001-8.001c4.411 0 7.999 3.588 7.999 8.001s-3.588 8.001-7.999 8.001z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M12.122 12.12c-1.39-1.39-1.39-3.647 0-5.037s3.646-1.39 5.036 0c1.389 1.39 1.389 3.647 0 5.037s-3.646 1.39-5.036 0z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M11.879 11.878a3.562 3.562 0 0 1-5.037 0c-1.39-1.39-1.39-3.646 0-5.036s3.647-1.39 5.037 0c1.39 1.39 1.39 3.646 0 5.036z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M12 12c.828 0 1.5-.672 1.5-1.5s-.672-1.5-1.5-1.5-1.5.672-1.5 1.5.672 1.5 1.5 1.5z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M11.879 11.878c-1.39 1.39-1.39 3.647 0 5.037s3.647 1.39 5.037 0c1.39-1.39 1.39-3.647 0-5.037s-3.647-1.39-5.037 0z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M12.122 12.12c1.39-1.39 1.39-3.647 0-5.037s-3.647-1.39-5.037 0c-1.39 1.39-1.39-3.647 0 5.037s3.647 1.39 5.037 0z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mobile-snap">
+            <div class="skill-item">
+              <svg class="w-12 h-12 text-[#61DAFB]" role="img" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><title>React</title><g fill="currentColor"><ellipse ry="49" rx="11" transform="rotate(90)" cy="64" cx="64"/><ellipse ry="49" rx="11" transform="rotate(30)" cy="64" cx="64"/><ellipse ry="49" rx="11" transform="rotate(-30)" cy="64" cx="64"/><circle r="10" cy="64" cx="64"/></g></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 React
               </h3>
             </div>
           
             <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
+              class="skill-item"
             >
-              <svg
-                class="w-12 h-12 text-emerald-500"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Vue.js</title>
-                <path
-                  d="M24 1.5l-12 21-12-21h7.5l4.5 7.895l4.5-7.895h7.5z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M19.5 1.5h-4.5l-3 5.215l-3-5.215h-4.5l7.5 13.015l7.5-13.015z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg class="w-12 h-12 text-[#4FC08D]" role="img" viewBox="0 0 256 221" xmlns="http://www.w3.org/2000/svg"><title>Vue.js</title><path d="M204.8 0H256L128 220.8 0 0h97.92L128 51.2 157.44 0h47.36z" fill="#42b883"/><path d="M0 0l128 220.8L256 0h-51.2L128 132.48 50.56 0H0z" fill="#42b883"/><path d="M50.56 0L128 133.12 204.8 0h-47.36L128 51.2 97.92 0H50.56z" fill="#35495e"/></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 Vue.js
               </h3>
             </div>
           
             <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
+              class="skill-item"
             >
-              <svg
-                class="w-12 h-12 text-slate-800 dark:text-white"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Next.js</title>
-                <path
-                  d="M12.001 2.002c-5.524 0-10.001 4.476-10.001 10s4.477 10 10.001 10c5.523 0 9.999-4.476 9.999-10s-4.476-10-9.999-10zm-1.52 14.603h-2.548v-7.206h2.548v7.206zm.801-8.508c-.644 0-1.116-.272-1.52-.816-.404-.544-.606-1.258-.606-2.142c0-.884.202-1.598.606-2.142c.404-.544.876-.816 1.52-.816c.644 0 1.116.272 1.52.816c.404.544.606 1.258.606 2.142c0 .884-.202 1.598-.606 2.142c-.404.544-.876.816-1.52.816zm5.867 8.508h3.492l-5.11-7.206h-2.548v7.206h2.548v-4.626l1.618 2.25v2.376z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg class="w-12 h-12 text-slate-800 dark:text-white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Next.js</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.22 19.135V4.865h1.902l6.32 10.363v-3.32h1.63V20h-1.72l-6.44-10.64v9.775h-1.692z" fill="currentColor"/></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 Next.js
               </h3>
             </div>
           
             <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
+              class="skill-item"
             >
-              <svg
-                class="w-12 h-12 text-cyan-500"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Tailwind CSS</title>
-                <path
-                  d="M12.001 2.002c-5.524 0-10.001 4.476-10.001 10s4.477 10 10.001 10c5.523 0 9.999-4.476 9.999-10s-4.476-10-9.999-10zm-3.5 8c0-1.381 1.119-2.5 2.5-2.5s2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5-2.5-1.119-2.5-2.5zm7 0c0-1.381 1.119-2.5 2.5-2.5s2.5 1.119 2.5 2.5-1.119 2.5-2.5 2.5-2.5-1.119-2.5-2.5z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg class="w-12 h-12 text-[#06B6D4]" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Tailwind CSS</title><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zM6.001 12c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" fill="currentColor"/></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 Tailwind CSS
               </h3>
             </div>
           
             <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
+              class="skill-item"
             >
-              <svg
-                class="w-12 h-12 text-green-500"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Node.js</title>
-                <path
-                  d="M11.996 0a1.523 1.523 0 0 0-.76.19L.533 6.643a1.522 1.522 0 0 0-.533 1.325v1.428a1.522 1.522 0 0 0 .762 1.32l10.473 6.046v.002a1.523 1.523 0 0 0 1.523 0v-.002l10.47-6.046a1.522 1.522 0 0 0 .762-1.32V7.968a1.522 1.522 0 0 0-.534-1.325L12.756.19a1.523 1.523 0 0 0-.76 0zm-.13 1.724l9.35 5.398-3.95 2.28-5.4-3.116zm-1.265.73l-5.4 3.117-3.95-2.281zm-.13 13.585l-4.74-2.736v-5.47l4.74 2.736zm.26 1.442l-9.35-5.398 3.95-2.28 5.4 3.116zm1.265-.73l5.4-3.117 3.95 2.281zm.13-13.585l4.74-2.736v5.47l-4.74 2.736z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg class="w-12 h-12 text-[#339933]" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Node.js</title><path d="M11.996 0a1.523 1.523 0 0 0-.76.19L.533 6.643a1.522 1.522 0 0 0-.533 1.325v1.428a1.522 1.522 0 0 0 .762 1.32l10.473 6.046v.002a1.523 1.523 0 0 0 1.523 0v-.002l10.47-6.046a1.522 1.522 0 0 0 .762-1.32V7.968a1.522 1.522 0 0 0-.534-1.325L12.756.19a1.523 1.523 0 0 0-.76 0zM12 1.88l8.912 5.145-3.8-2.193-5.112-2.952zm-1.12.001L5.768 4.828 2.02 2.632l5.048-2.91zm.004 13.518L6.145 12.66l-4.74 2.736v-5.47l4.74 2.737v2.736zm1.116.643l-8.912-5.145 3.8 2.193 5.112 2.952zm1.12-.001l5.112-2.953 3.8-2.192-8.912 5.145zm.004-13.518l4.74-2.737v5.47l-4.74-2.737V2.524z" fill="currentColor"/></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 Node.js
               </h3>
             </div>
           
             <div
-              class="text-center flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-colors duration-300"
+              class="skill-item"
             >
-              <svg
-                class="w-12 h-12 text-pink-500"
-                role="img"
-                viewbox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Figma</title>
-                <path
-                  d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zM7.5 12c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5v4.5c0 2.485-2.015 4.5-4.5 4.5S7.5 18.985 7.5 16.5v-4.5zm4.5-3c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg class="w-12 h-12" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Figma</title><path d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12zM7.5 12c0-2.485 2.015-4.5 4.5-4.5s4.5 2.015 4.5 4.5v4.5c0 2.485-2.015 4.5-4.5 4.5S7.5 18.985 7.5 16.5v-4.5zm4.5-3c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z" fill="#F24E1E"/><path d="M12 2.999a4.5 4.5 0 00-4.5 4.5V12a4.5 4.5 0 004.5 4.5h4.5v-4.5a4.5 4.5 0 00-4.5-4.5z" fill="#FF7262"/><path d="M12 2.999a4.5 4.5 0 014.5 4.5V12a4.5 4.5 0 01-4.5 4.5v-9z" fill="#A259FF"/><path d="M7.5 12a4.5 4.5 0 004.5 4.5V12a4.5 4.5 0 00-4.5-4.5v4.5z" fill="#1ABCFE"/><path d="M12 16.5a4.5 4.5 0 01-4.5 4.5H12v-4.5z" fill="#0ACF83"/></svg>
               <h3 class="font-semibold text-slate-800 dark:text-white">
                 Figma
               </h3>
             </div>
           </div>
         </section>
-        <!-- ===== PROJECTS SECTION ===== -->
         <section class="py-20" id="projects">
           <div class="text-center mb-12">
             <h2
               class="text-4xl font-bold text-slate-900 dark:text-white"
               data-key="projectsTitle"
             >
-              Dự án nổi bật
             </h2>
             <p
               class="text-slate-600 dark:text-slate-400 mt-2"
               data-key="projectsSubtitle"
             >
-              Một vài sản phẩm mà tôi tâm đắc.
             </p>
           </div>
-          <!-- Filter Buttons -->
           <div
             class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12"
             id="project-filters"
           >
             <button
-              class="filter-btn active px-4 py-2 text-sm md:text-base font-semibold rounded-lg transition-colors duration-300 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+              class="filter-btn active"
               data-filter="all"
               data-key="filterAll"
             >
-              Tất cả
             </button>
             <button
-              class="filter-btn px-4 py-2 text-sm md:text-base font-semibold rounded-lg transition-colors duration-300 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+              class="filter-btn"
               data-filter="dev"
               data-key="filterDev"
             >
-              Lập trình
             </button>
             <button
-              class="filter-btn px-4 py-2 text-sm md:text-base font-semibold rounded-lg transition-colors duration-300 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+              class="filter-btn"
               data-filter="uiux"
               data-key="filterUIUX"
             >
-              UI/UX Design
             </button>
             <button
-              class="filter-btn px-4 py-2 text-sm md:text-base font-semibold rounded-lg transition-colors duration-300 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700"
+              class="filter-btn"
               data-filter="graphic"
               data-key="filterGraphic"
             >
-              Thiết kế đồ họa
             </button>
           </div>
           <div
-            class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-snap"
+            class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-snap projects"
             id="project-grid"
           >
-            <!-- Project items will be dynamically generated by JavaScript -->
-          </div>
+            </div>
         </section>
-        <!-- ===== SERVICES SECTION (RESTRUCTURED) ===== -->
         <section
           class="py-20 lg:py-32 bg-slate-100 dark:bg-slate-900/50"
           id="services"
@@ -482,20 +403,16 @@
                 class="text-4xl font-bold text-slate-900 dark:text-white"
                 data-key="servicesTitle"
               >
-                Dịch vụ của tôi
               </h2>
               <p
                 class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto"
                 data-key="servicesSubtitle"
               >
-                Cung cấp các giải pháp chuyên biệt để hiện thực hóa ý tưởng của
-                bạn.
               </p>
             </div>
             <div
               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mobile-snap"
             >
-              <!-- Service Card 1: Web Development -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-2xl p-8 flex flex-col border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-2 transition-all duration-300"
               >
@@ -520,14 +437,11 @@
                   class="text-xl font-bold text-slate-900 dark:text-white"
                   data-key="serviceWebTitle"
                 >
-                  Phát triển Web
                 </h3>
                 <p
                   class="text-slate-500 dark:text-slate-400 mt-2 mb-6 flex-grow"
                   data-key="serviceWebDesc"
                 >
-                  Xây dựng các trang web và ứng dụng web hiện đại, tốc độ cao và
-                  thân thiện với người dùng.
                 </p>
                 <ul
                   class="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-6"
@@ -546,7 +460,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceWebFeat1"
-                      >Website tĩnh &amp; Landing Page</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -563,7 +477,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceWebFeat2"
-                      >Website doanh nghiệp &amp; Blog</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -580,7 +494,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceWebFeat3"
-                      >Ứng dụng web phức tạp (SPA)</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -597,7 +511,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceWebFeat4"
-                      >Tích hợp API &amp; Backend</span
+                      ></span
                     >
                   </li>
                 </ul>
@@ -605,10 +519,9 @@
                   class="mt-auto w-full text-center bg-violet-500 hover:bg-violet-600 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
                   data-key="serviceBtnQuote"
                   href="#contact"
-                  >Yêu cầu báo giá</a
+                  ></a
                 >
               </div>
-              <!-- Service Card 2: UI/UX Design -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-2xl p-8 flex flex-col border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-2 transition-all duration-300"
               >
@@ -633,14 +546,11 @@
                   class="text-xl font-bold text-slate-900 dark:text-white"
                   data-key="serviceUiuxTitle"
                 >
-                  Thiết kế UI/UX
                 </h3>
                 <p
                   class="text-slate-500 dark:text-slate-400 mt-2 mb-6 flex-grow"
                   data-key="serviceUiuxDesc"
                 >
-                  Tạo ra những giao diện đẹp mắt và trải nghiệm người dùng mượt
-                  mà, trực quan.
                 </p>
                 <ul
                   class="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-6"
@@ -659,7 +569,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceUiuxFeat1"
-                      >Nghiên cứu người dùng &amp; Wireframing</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -676,7 +586,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceUiuxFeat2"
-                      >Thiết kế giao diện (UI) cho Web &amp; App</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -693,7 +603,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceUiuxFeat3"
-                      >Xây dựng hệ thống thiết kế</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -710,7 +620,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceUiuxFeat4"
-                      >Tạo mẫu tương tác (Prototyping)</span
+                      ></span
                     >
                   </li>
                 </ul>
@@ -718,10 +628,9 @@
                   class="mt-auto w-full text-center bg-violet-500 hover:bg-violet-600 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
                   data-key="serviceBtnQuote"
                   href="#contact"
-                  >Yêu cầu báo giá</a
+                  ></a
                 >
               </div>
-              <!-- Service Card 3: Graphic Design -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-2xl p-8 flex flex-col border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 hover:-translate-y-2 transition-all duration-300"
               >
@@ -752,14 +661,11 @@
                   class="text-xl font-bold text-slate-900 dark:text-white"
                   data-key="serviceGraphicTitle"
                 >
-                  Thiết kế Đồ họa
                 </h3>
                 <p
                   class="text-slate-500 dark:text-slate-400 mt-2 mb-6 flex-grow"
                   data-key="serviceGraphicDesc"
                 >
-                  Cung cấp các giải pháp sáng tạo về hình ảnh để xây dựng và
-                  nâng tầm thương hiệu của bạn.
                 </p>
                 <ul
                   class="space-y-2 text-sm text-slate-600 dark:text-slate-400 mb-6"
@@ -778,7 +684,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceGraphicFeat1"
-                      >Thiết kế Logo &amp; Bộ nhận diện</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -795,7 +701,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceGraphicFeat2"
-                      >Ấn phẩm Marketing (Banner, Poster)</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -812,7 +718,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceGraphicFeat3"
-                      >Đồ họa cho Social Media</span
+                      ></span
                     >
                   </li>
                   <li class="flex items-center gap-3">
@@ -829,7 +735,7 @@
                         stroke-width="2"
                       ></path></svg
                     ><span data-key="serviceGraphicFeat4"
-                      >Chỉnh sửa ảnh &amp; video ngắn</span
+                      ></span
                     >
                   </li>
                 </ul>
@@ -837,13 +743,12 @@
                   class="mt-auto w-full text-center bg-violet-500 hover:bg-violet-600 text-white font-semibold py-3 rounded-lg transition-colors duration-300"
                   data-key="serviceBtnQuote"
                   href="#contact"
-                  >Yêu cầu báo giá</a
+                  ></a
                 >
               </div>
             </div>
           </div>
         </section>
-        <!-- ===== DIGITAL PRODUCTS STORE SECTION (NEW) ===== -->
         <section class="py-20 lg:py-32" id="store">
           <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -851,18 +756,14 @@
                 class="text-4xl font-bold text-slate-900 dark:text-white"
                 data-key="storeTitle"
               >
-                Cửa hàng sản phẩm số
               </h2>
               <p
                 class="text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto"
                 data-key="storeSubtitle"
               >
-                Các tài nguyên, mẫu và bộ công cụ được tạo sẵn để đẩy nhanh tiến
-                độ công việc của bạn.
               </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mobile-snap">
-              <!-- Product Card 1 -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-lg overflow-hidden group border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300"
               >
@@ -879,31 +780,27 @@
                     class="text-xl font-bold text-slate-900 dark:text-white mb-2"
                     data-key="product1Title"
                   >
-                    Bộ UI Kit cho Figma
                   </h3>
                   <p
                     class="text-slate-600 dark:text-slate-400 mb-4 h-16"
                     data-key="product1Desc"
                   >
-                    Một bộ giao diện người dùng toàn diện giúp bạn thiết kế ứng
-                    dụng di động nhanh hơn.
                   </p>
                   <div class="flex justify-between items-center">
                     <span
                       class="text-2xl font-bold text-violet-500 dark:text-violet-400"
                       data-key="product1Price"
-                      >$49</span
+                      ></span
                     >
                     <a
                       class="bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-300 font-semibold px-5 py-2 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-900 transition-colors duration-300"
                       data-key="productBtnBuy"
                       href="#"
-                      >Mua ngay</a
+                      ></a
                     >
                   </div>
                 </div>
               </div>
-              <!-- Product Card 2 -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-lg overflow-hidden group border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300"
               >
@@ -920,31 +817,27 @@
                     class="text-xl font-bold text-slate-900 dark:text-white mb-2"
                     data-key="product2Title"
                   >
-                    Mẫu Web Portfolio
                   </h3>
                   <p
                     class="text-slate-600 dark:text-slate-400 mb-4 h-16"
                     data-key="product2Desc"
                   >
-                    Mẫu website portfolio cá nhân được xây dựng bằng Next.js và
-                    Tailwind CSS, dễ dàng tùy chỉnh.
                   </p>
                   <div class="flex justify-between items-center">
                     <span
                       class="text-2xl font-bold text-violet-500 dark:text-violet-400"
                       data-key="product2Price"
-                      >$29</span
+                      ></span
                     >
                     <a
                       class="bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-300 font-semibold px-5 py-2 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-900 transition-colors duration-300"
                       data-key="productBtnBuy"
                       href="#"
-                      >Mua ngay</a
+                      ></a
                     >
                   </div>
                 </div>
               </div>
-              <!-- Product Card 3 -->
               <div
                 class="bg-white dark:bg-slate-900/50 rounded-lg overflow-hidden group border border-slate-200 dark:border-slate-800 hover:shadow-xl hover:shadow-violet-500/10 transition-all duration-300"
               >
@@ -961,26 +854,23 @@
                     class="text-xl font-bold text-slate-900 dark:text-white mb-2"
                     data-key="product3Title"
                   >
-                    Bộ Icon Đồ họa
                   </h3>
                   <p
                     class="text-slate-600 dark:text-slate-400 mb-4 h-16"
                     data-key="product3Desc"
                   >
-                    Hơn 100 icon vector được thiết kế thủ công cho các dự án
-                    thiết kế và phát triển web.
                   </p>
                   <div class="flex justify-between items-center">
                     <span
                       class="text-2xl font-bold text-violet-500 dark:text-violet-400"
                       data-key="product3Price"
-                      >$19</span
+                      ></span
                     >
                     <a
                       class="bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-300 font-semibold px-5 py-2 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-900 transition-colors duration-300"
                       data-key="productBtnBuy"
                       href="#"
-                      >Mua ngay</a
+                      ></a
                     >
                   </div>
                 </div>
@@ -988,11 +878,9 @@
             </div>
           </div>
         </section>
-        <!-- ===== ABOUT SECTION ===== -->
         <section class="py-20 lg:py-32" id="about">
           <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-              <!-- Image Column -->
               <div class="lg:col-span-2 about-image-column">
                 <div
                   class="w-full max-w-sm mx-auto aspect-square rounded-2xl shadow-lg transform rotate-[-3deg] hover:rotate-0 transition-transform duration-300"
@@ -1020,7 +908,6 @@
 
                     <circle class="chibi-bg" cx="100" cy="100" r="95"></circle>
                     <g transform="translate(0, 10)">
-                      <!-- Laptop -->
                       <g transform="translate(40, 120)">
                         <path
                           d="M 0 60 L 120 60 L 110 0 L 10 0 Z"
@@ -1042,16 +929,12 @@
                           ></path>
                         </g>
                       </g>
-                      <!-- Chibi Body -->
                       <g transform="translate(100, 95)">
-                        <!-- Body -->
                         <path
                           d="M -25 20 C -25 40, 25 40, 25 20 L 20 0 L -20 0 Z"
                           fill="#c4b5fd"
                         ></path>
-                        <!-- Head -->
                         <circle cx="0" cy="-25" fill="#fde6d8" r="30"></circle>
-                        <!-- Hair -->
                         <g>
                           <path
                             d="M -35 -30 C -25 -55, 25 -55, 35 -30 C 45 0, -45 0, -35 -30"
@@ -1066,9 +949,7 @@
                             fill="#6b21a8"
                           ></path>
                         </g>
-                        <!-- Face -->
                         <g>
-                          <!-- Winking Eye -->
                           <path
                             d="M 5 -22 q 10 0 10 5"
                             fill="none"
@@ -1076,7 +957,6 @@
                             stroke-linecap="round"
                             stroke-width="1.5"
                           ></path>
-                          <!-- Open Eye -->
                           <circle cx="-12" cy="-20" fill="#333" r="4"></circle>
                           <circle
                             cx="-13"
@@ -1084,7 +964,6 @@
                             fill="white"
                             r="1.5"
                           ></circle>
-                          <!-- Blushes -->
                           <circle
                             cx="-20"
                             cy="-15"
@@ -1099,7 +978,6 @@
                             fill-opacity="0.6"
                             r="4"
                           ></circle>
-                          <!-- Mouth -->
                           <path
                             d="M -5 -12 q 5 5 10 0"
                             fill="none"
@@ -1108,7 +986,6 @@
                             stroke-width="1.5"
                           ></path>
                         </g>
-                        <!-- Headphones -->
                         <path
                           d="M -25 5 C -35 -20, 35 -20, 25 5"
                           fill="none"
@@ -1133,7 +1010,6 @@
                           stroke-width="1.5"
                         ></circle>
                       </g>
-                      <!-- Ground -->
                       <rect
                         class="dark:fill-[#0f172a]"
                         fill="#e2e8f0"
@@ -1146,32 +1022,21 @@
                   </svg>
                 </div>
               </div>
-              <!-- Text Column -->
               <div class="lg:col-span-3">
                 <h2
                   class="text-4xl font-bold text-slate-900 dark:text-white mb-4"
                   data-key="aboutTitle"
                 >
-                  Về tôi
                 </h2>
                 <p
                   class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed"
                   data-key="aboutPara1"
                 >
-                  Xin chào! Tôi là kimdevhere, một người đam mê xây dựng những
-                  thứ hữu ích cho internet. Hành trình của tôi bắt đầu từ thiết
-                  kế đồ họa, nơi tôi học được về bố cục, màu sắc và câu chuyện
-                  hình ảnh.
                 </p>
                 <p
                   class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed"
                   data-key="aboutPara2"
                 >
-                  Sự tò mò đã dẫn tôi đến với UI/UX, nơi tôi có thể áp dụng tư
-                  duy thiết kế để giải quyết các vấn đề thực tế của người dùng.
-                  Không dừng lại ở đó, tôi muốn tự tay biến những thiết kế đó
-                  thành sản phẩm sống, và đó là lúc tôi dấn thân vào thế giới
-                  lập trình web.
                 </p>
                 <div
                   class="border-l-4 border-violet-500 dark:border-violet-400 pl-4 mb-8"
@@ -1180,15 +1045,11 @@
                     class="text-xl font-bold text-slate-900 dark:text-white mb-2"
                     data-key="aboutPhilosophyTitle"
                   >
-                    Triết lý làm việc
                   </h4>
                   <p
                     class="text-slate-600 dark:text-slate-400 italic"
                     data-key="aboutPhilosophyText"
                   >
-                    Tôi tin rằng sản phẩm tốt nhất được tạo ra từ sự giao thoa
-                    giữa thiết kế lấy người dùng làm trung tâm và công nghệ vững
-                    chắc. Mọi pixel, mọi dòng code đều phải có mục đích.
                   </p>
                 </div>
                 <a
@@ -1197,33 +1058,27 @@
                   download=""
                   href="/path-to-your-cv.pdf"
                 >
-                  Tải CV của tôi
                 </a>
               </div>
             </div>
           </div>
         </section>
-        <!-- ===== CONTACT SECTION ===== -->
         <section class="py-20 lg:py-32" id="contact">
           <div class="container mx-auto px-4">
             <div
               class="bg-slate-100 dark:bg-slate-900/50 rounded-2xl p-8 md:p-12 lg:p-16 border border-slate-200 dark:border-slate-800"
             >
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Left Column: Info -->
                 <div>
                   <h2
                     class="text-4xl font-bold text-slate-900 dark:text-white"
                     data-key="contactTitle"
                   >
-                    Cùng xây dựng điều gì đó tuyệt vời?
                   </h2>
                   <p
                     class="text-slate-600 dark:text-slate-400 mt-4 mb-8 leading-relaxed"
                     data-key="contactSubtitle"
                   >
-                    Tôi luôn sẵn sàng lắng nghe về các dự án mới, các cơ hội hợp
-                    tác hoặc đơn giản là để trò chuyện. Hãy liên hệ với tôi!
                   </p>
                   <div class="space-y-4">
                     <a
@@ -1251,7 +1106,7 @@
                         <span
                           class="text-slate-500 dark:text-slate-400 text-sm"
                           data-key="contactEmailLabel"
-                          >Gửi email cho tôi</span
+                          ></span
                         >
                         <p class="text-slate-800 dark:text-white font-semibold">
                           emailcuaban@example.com
@@ -1262,7 +1117,7 @@
                       <span
                         class="text-slate-500 dark:text-slate-400 text-sm"
                         data-key="contactSocialLabel"
-                        >Theo dõi tôi</span
+                        ></span
                       >
                       <div class="flex gap-4">
                         <a
@@ -1270,6 +1125,7 @@
                           href="https://github.com/your-username"
                           rel="noopener noreferrer"
                           target="_blank"
+                          aria-label="GitHub"
                         >
                           <svg
                             class="w-6 h-6"
@@ -1288,6 +1144,7 @@
                           href="https://linkedin.com/in/your-username"
                           rel="noopener noreferrer"
                           target="_blank"
+                          aria-label="LinkedIn"
                         >
                           <svg
                             class="w-6 h-6"
@@ -1303,7 +1160,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- Right Column: Form -->
                 <div>
                   <form action="#" class="space-y-6" method="POST">
                     <div>
@@ -1311,14 +1167,17 @@
                         class="block text-sm font-medium text-slate-700 dark:text-slate-300"
                         data-key="formName"
                         for="name"
-                        >Họ tên</label
+                        ></label
                       >
                       <input
-                        class="mt-1 block w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md shadow-sm py-3 px-4 text-slate-900 dark:text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500"
+                        class="mt-1 block w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md shadow-sm py-3 px-4 text-slate-900 dark:text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500 transition-all duration-300"
                         id="name"
                         name="name"
                         required=""
                         type="text"
+                        data-key-placeholder="formNamePlaceholder"
+                        autocomplete="name"
+                        aria-describedby="name-error"
                       />
                     </div>
                     <div>
@@ -1326,7 +1185,7 @@
                         class="block text-sm font-medium text-slate-700 dark:text-slate-300"
                         data-key="formEmail"
                         for="email"
-                        >Email</label
+                        ></label
                       >
                       <input
                         class="mt-1 block w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md shadow-sm py-3 px-4 text-slate-900 dark:text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500"
@@ -1334,6 +1193,7 @@
                         name="email"
                         required=""
                         type="email"
+                        data-key-placeholder="formEmailPlaceholder"
                       />
                     </div>
                     <div>
@@ -1341,7 +1201,7 @@
                         class="block text-sm font-medium text-slate-700 dark:text-slate-300"
                         data-key="formMessage"
                         for="message"
-                        >Lời nhắn</label
+                        ></label
                       >
                       <textarea
                         class="mt-1 block w-full bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-md shadow-sm py-3 px-4 text-slate-900 dark:text-white focus:outline-none focus:ring-violet-500 focus:border-violet-500"
@@ -1349,6 +1209,7 @@
                         name="message"
                         required=""
                         rows="4"
+                        data-key-placeholder="formMessagePlaceholder"
                       ></textarea>
                     </div>
                     <div>
@@ -1357,7 +1218,6 @@
                         data-key="formSubmitBtn"
                         type="submit"
                       >
-                        Gửi Lời Nhắn
                       </button>
                     </div>
                   </form>
@@ -1367,7 +1227,6 @@
           </div>
         </section>
       </main>
-      <!-- ===== FOOTER ===== -->
       <footer
         class="bg-slate-100 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800"
       >
@@ -1377,13 +1236,11 @@
               class="text-slate-500 dark:text-slate-400 text-sm"
               data-key="footerText"
             >
-              © 2025 kimdevhere. All Rights Reserved.
             </p>
           </div>
         </div>
       </footer>
     </div>
-    <!-- ===== PROJECT DETAIL MODAL ===== -->
     <div
       class="hidden fixed inset-0 bg-black bg-opacity-70 z-[100] flex items-center justify-center p-4 transition-opacity duration-300"
       id="project-detail-modal"
@@ -1392,16 +1249,16 @@
         class="bg-white dark:bg-slate-800 rounded-lg shadow-2xl w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row transform scale-95 transition-transform duration-300"
         id="modal-content"
       >
-        <!-- Close button -->
         <button
-          class="absolute -top-3 -right-3 bg-white dark:bg-slate-600 rounded-full h-8 w-8 flex items-center justify-center text-slate-800 dark:text-white shadow-lg"
+          class="absolute -top-3 -right-3 bg-white dark:bg-slate-600 rounded-full h-8 w-8 flex items-center justify-center text-slate-800 dark:text-white shadow-lg z-10"
           id="modal-close-btn"
+          aria-label="Đóng"
         >
           ×
         </button>
         <img
           alt="Project Image"
-          class="w-full md:w-1/2 h-64 md:h-auto object-cover rounded-l-lg"
+          class="w-full md:w-1/2 h-64 md:h-auto object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
           id="modal-img"
           src=""
         />
@@ -1411,7 +1268,6 @@
             id="modal-title"
           ></h3>
           <div class="flex flex-wrap gap-2 mb-4" id="modal-tags">
-            <!-- Tags will be inserted here -->
           </div>
           <p
             class="text-slate-600 dark:text-slate-400 mb-6 flex-grow"
@@ -1439,7 +1295,7 @@
                   stroke-width="2"
                 ></path>
               </svg>
-              <span>Xem Live</span>
+              <span></span>
             </a>
             <a
               class="inline-flex items-center gap-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-800 dark:text-white font-semibold px-5 py-2 rounded-lg transition-colors duration-300"
@@ -1456,40 +1312,49 @@
                   fill-rule="evenodd"
                 ></path>
               </svg>
-              <span>Mã nguồn</span>
+              <span></span>
             </a>
           </div>
         </div>
       </div>
     </div>
-    <!-- ===== MOBILE TABBAR ===== -->
-    <div class="lg:hidden" id="mobile-tabbar">
-      <a href="#home" class="tab-item active" data-tab="home">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-        <span>Trang chủ</span>
-      </a>
-      <a href="#skills" class="tab-item" data-tab="skills">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-        <span>Kỹ năng</span>
-      </a>
-      <a href="#projects" class="tab-item" data-tab="projects">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-        <span>Dự án</span>
-      </a>
-      <a href="#services" class="tab-item" data-tab="services">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-        <span>Dịch vụ</span>
-      </a>
-      <a href="#contact" class="tab-item" data-tab="contact">
-        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-        <span>Liên hệ</span>
-      </a>
-    </div>
-    <!-- ===== MOBILE CTA BUTTON ===== -->
-    <a href="#contact" class="lg:hidden" id="mobile-cta">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-      <span>Liên hệ</span>
-    </a>
+    <nav id="mobile-tabbar" class="fixed bottom-0 left-0 right-0 lg:hidden z-50" aria-label="Điều hướng chính">
+      <div class="grid grid-cols-5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/50 dark:border-slate-800/50 pb-safe">
+        <a href="#home" data-tab="home" class="tab-item active" aria-label="Trang chủ">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5"/>
+          </svg>
+          <span data-key="navHomeMobile">Trang chủ</span>
+        </a>
+        <a href="#projects" data-tab="projects" class="tab-item" aria-label="Dự án">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L12 15.25l5.571-3M6.429 9.75 12 12m0 0 5.571 3"/>
+          </svg>
+          <span data-key="navProjectsMobile">Dự án</span>
+        </a>
+        <button type="button" id="theme-toggle-mobile" class="tab-item" aria-label="Chuyển đổi giao diện">
+          <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+          </svg>
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+          </svg>
+          <span>Theme</span>
+        </button>
+        <a href="#about" data-tab="about" class="tab-item" aria-label="Giới thiệu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+          </svg>
+          <span data-key="navAboutMobile">Giới thiệu</span>
+        </a>
+        <a href="#contact" data-tab="contact" class="tab-item" aria-label="Liên hệ">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>
+          </svg>
+          <span data-key="navContactMobile">Liên hệ</span>
+        </a>
+      </div>
+    </nav>
     <script src="script.js"></script>
   </body>
 </html>
