@@ -247,7 +247,14 @@ const translations = {
             title: "Landing Page sự kiện", 
             cardDesc: "Thiết kế và lập trình landing page cho một sự kiện công nghệ.", 
             detailDesc: "Mô tả chi tiết cho dự án Landing Page sự kiện. Kết hợp giữa kỹ năng thiết kế đồ họa bằng Illustrator và lập trình front-end với Next.js để tạo ra một trang landing page ấn tượng và hiệu quả." 
-        }
+        },
+
+        //tabbar mobile 
+        navHomeMobile: "Trang chủ",
+    navProjectsMobile: "Dự án",
+    navAboutMobile: "Giới thiệu",
+    navContactMobile: "Liên hệ",
+    navThemeMobile: "Giao diện",
     },
     en: {
          
@@ -373,7 +380,15 @@ const translations = {
             title: "Event Landing Page", 
             cardDesc: "Designed and coded a landing page for a tech event.", 
             detailDesc: "Detailed description for the Event Landing Page project. Combined graphic design skills using Illustrator and front-end programming with Next.js to create an impressive and effective landing page." 
-        }
+        },
+
+        //tabbar mobile
+
+         navHomeMobile: "Home",
+    navProjectsMobile: "Projects",
+    navAboutMobile: "About",
+    navContactMobile: "Contact",
+    navThemeMobile: "Theme",
     },
     ja: {
         pageTitle: "ポートフォリオ | kimdevhere - ウェブ開発者 & デザイナー",
@@ -498,7 +513,14 @@ const translations = {
             title: "イベントランディングページ", 
             cardDesc: "テックイベント用のランディングページをデザイン・コーディング。", 
             detailDesc: "イベントランディングページプロジェクトの詳細な説明。Illustratorを使用したグラフィックデザインスキルとNext.jsを使用したフロントエンドプログラミングを組み合わせて、印象的で効果的なランディングページを作成しました。" 
-        }
+        },
+
+        //tabbar mobile
+         navHomeMobile: "ホーム",
+    navProjectsMobile: "プロジェクト",
+    navAboutMobile: "紹介",
+    navContactMobile: "連絡先",
+    navThemeMobile: "テーマ"
     }
 };
 
@@ -579,10 +601,14 @@ function setLanguage(lang) {
     
     const flagEl = document.getElementById('lang-switcher-flag');
     const textEl = document.getElementById('lang-switcher-text');
-    
+    const mobileFlagEl = document.getElementById('mobile-lang-switcher-flag');
+    const mobileTextEl = document.getElementById('mobile-lang-switcher-text');
+
+
     if (flagEl) flagEl.innerText = flagMap[lang];
     if (textEl) textEl.innerText = langTextMap[lang];
-    
+    if (mobileFlagEl) mobileFlagEl.innerText = flagMap[lang];
+if (mobileTextEl) mobileTextEl.innerText = langTextMap[lang];
     // Close dropdown
     const dropdown = document.getElementById('lang-switcher-dropdown');
     if (dropdown) dropdown.classList.add('hidden');
@@ -884,28 +910,60 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
     
     // Language switcher events
-    const langDropdown = document.getElementById('lang-switcher-dropdown');
-    if (langDropdown) {
-        langDropdown.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => { 
-                e.preventDefault(); 
-                setLanguage(e.currentTarget.dataset.lang); 
+    // === LANGUAGE SWITCHER EVENTS (cho cả Desktop và Mobile) ===
+
+    // Hàm helper để khởi tạo một bộ chuyển ngôn ngữ
+    const initializeLanguageSwitcher = (buttonId, dropdownId) => {
+        const button = document.getElementById(buttonId);
+        const dropdown = document.getElementById(dropdownId);
+
+        if (!button || !dropdown) return;
+
+        // Toggle dropdown when button is clicked
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Add click events to language options
+        dropdown.querySelectorAll('[data-lang]').forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = e.currentTarget.getAttribute('data-lang');
+                if (lang) {
+                    setLanguage(lang);
+                    dropdown.classList.add('hidden');
+                }
             });
         });
-    }
-    
-    const langButton = document.getElementById('lang-switcher-button');
-    if (langButton) {
-        langButton.addEventListener('click', (e) => { 
-            e.stopPropagation(); 
-            const dropdown = document.getElementById('lang-switcher-dropdown');
-            if (dropdown) dropdown.classList.toggle('hidden'); 
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!button.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
         });
-    }
+    };
+
     
+    initializeLanguageSwitcher('lang-switcher-button', 'lang-switcher-dropdown'); // Desktop
+    initializeLanguageSwitcher('mobile-lang-switcher-button', 'mobile-lang-switcher-dropdown'); // Mobile
+
+    // Sự kiện click để chọn ngôn ngữ (áp dụng cho tất cả các link ngôn ngữ)
+    document.querySelectorAll('[data-lang]').forEach(link => {
+        link.addEventListener('click', (e) => { 
+            e.preventDefault(); 
+            const lang = e.currentTarget.getAttribute('data-lang');
+            if (lang) {
+                setLanguage(lang);
+            }
+        });
+    });
+
+    // Sự kiện click ra ngoài để đóng tất cả dropdown
     document.addEventListener('click', () => {
-        const dropdown = document.getElementById('lang-switcher-dropdown');
-        if (dropdown) dropdown.classList.add('hidden');
+        document.getElementById('lang-switcher-dropdown')?.classList.add('hidden');
+        document.getElementById('mobile-lang-switcher-dropdown')?.classList.add('hidden');
     });
 
     // Setup Mobile Navigation

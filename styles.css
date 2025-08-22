@@ -1,4 +1,3 @@
-/* ========== PORTFOLIO WEBSITE - MODERN MOBILE REDESIGN ========== */
 /* Author: kimdevhere */
 /* Version: 4.0 - Mobile First Refactor */
 
@@ -10,6 +9,7 @@
     --transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --t/* === Responsive Layout Adjustments --- */
 @media (max-width: 1023px) {
+ 
   /* General layout */
   .container {
     width: 100%;
@@ -73,7 +73,11 @@
   }
 }on-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+@media (max-width: 1023px) {
+  body {
+        padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0em));
+    }
+  }
 /* ========== BASE STYLES ========== */
 html {
     scroll-behavior: smooth;
@@ -86,7 +90,7 @@ body {
     min-height: -webkit-fill-available;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
-    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 1rem));
+    
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -278,10 +282,26 @@ body {
     padding: 1.5rem;
     border: 1px solid #e2e8f0;
     transition: all var(--transition);
-    height: 100%;
+    height: auto;
+    min-height: 280px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+    .service-card {
+        min-height: unset;
+        margin-bottom: 1.25rem;
+    }
+    
+    #services .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
 }
 
 .service-card-icon {
@@ -344,12 +364,127 @@ body {
 
 /* ========== MODERN MOBILE UI STYLES ========== */
 
+/* --- Language Switcher Styles --- */
+.lang-switcher {
+    position: relative;
+    width: 100%;
+}
+
+.lang-switcher-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #64748b;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.dark .lang-switcher-button {
+    border-color: #475569;
+    color: #94a3b8;
+}
+
+.lang-switcher-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.dark .lang-switcher-button:hover {
+    background: #1e293b;
+    border-color: #64748b;
+}
+
+.lang-switcher-dropdown {
+    position: absolute;
+    bottom: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    opacity: 1;
+    transform-origin: bottom;
+    transition: all 0.2s ease;
+}
+
+.dark .lang-switcher-dropdown {
+    background: #1e293b;
+    border-color: #475569;
+}
+
+.lang-switcher-dropdown.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.lang-switcher-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    color: #64748b;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dark .lang-switcher-option {
+    color: #94a3b8;
+}
+
+.lang-switcher-option:hover {
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.dark .lang-switcher-option:hover {
+    background: #334155;
+    color: #f8fafc;
+}
+
+/* --- Mobile Navigation Links --- */
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: #64748b;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.dark .nav-link {
+    color: #94a3b8;
+}
+
+.nav-link:active {
+    background: #f1f5f9;
+    color: var(--primary);
+}
+
+.dark .nav-link:active {
+    background: #1e293b;
+    color: #a78bfa;
+}
+
 /* --- Mobile Header --- */
 #mobile-header {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     height: 4rem;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
@@ -360,10 +495,18 @@ body {
     -webkit-backdrop-filter: blur(20px);
     position: fixed;
     inset: 0;
-    z-index: 50;
+    z-index: 60;
     display: flex;
     align-items: stretch;
     transition: all 0.3s ease-in-out;
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 1rem));
+}
+
+.mobile-nav-content {
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 5rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 #mobile-nav-menu.active {
@@ -480,11 +623,27 @@ body {
 
 /* --- Mobile Grid Layouts --- */
 @media (max-width: 767px) {
-  #project-grid {
+  #project-grid,
+  #services .container > .grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-    padding: 1rem;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  #services {
+    padding: 2rem 0;
+  }
+
+  #services .service-card {
+    margin: 0;
+    height: auto;
+    min-height: unset;
+  }
+
+  #services .grid {
+    margin: -1.25rem;
+    width: calc(100% + 2.5rem);
   }
 
   .mobile-snap {
