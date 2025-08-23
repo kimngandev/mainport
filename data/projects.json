@@ -1,0 +1,56 @@
+[
+    {
+        "id": "proj1",
+        "category": "dev uiux",
+        "cardImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "tags": ["React", "Figma", "E-commerce"],
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": "proj2",
+        "category": "uiux graphic",
+        "cardImg": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+        "tags": ["Branding", "Logo Design", "Identity"],
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": "proj3",
+        "category": "dev",
+        "cardImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+        "tags": ["Vue.js", "Firebase", "PWA"],
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": "proj4",
+        "category": "graphic",
+        "cardImg": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
+        "tags": ["After Effects", "Motion Graphics", "Social Media"],
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": "proj5",
+        "category": "uiux",
+        "cardImg": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+        "tags": ["UX Research", "Mobile App", "Prototyping"],
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": "proj6",
+        "category": "dev graphic",
+        "cardImg": "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=600&h=400&fit=crop",
+        "detailImg": "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=800&h=600&fit=crop",
+        "tags": ["Next.js", "Landing Page", "Event Design"],
+        "liveLink": "#",
+        "repoLink": "#"
+    }
+]

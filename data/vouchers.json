@@ -1,0 +1,92 @@
+[
+  {
+    "id": "voucherHost1",
+    "logo": "https://placehold.co/40x40/8b5cf6/ffffff?text=SH",
+    "statusKey": "voucherStatusActive",
+    "statusClass": "text-green-600 dark:text-green-400",
+    "type": "code",
+    "code": "5JW0C0P2YQ",
+    "link": null
+  },
+  {
+    "id": "voucherHost2",
+    "logo": "https://placehold.co/40x40/10b981/ffffff?text=HH",
+    "statusKey": "voucherStatusActive",
+    "statusClass": "text-green-600 dark:text-green-400",
+    "type": "code",
+    "code": "HHI-Z86G53P3P1",
+    "link": null
+  },
+  {
+    "id": "voucherVps1",
+    "logo": "https://placehold.co/40x40/3b82f6/ffffff?text=V",
+    "statusKey": "voucherStatusHot",
+    "statusClass": "text-orange-500 dark:text-orange-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  },
+  {
+    "id": "voucherVps2",
+    "logo": "https://placehold.co/40x40/0ea5e9/ffffff?text=DO",
+    "statusKey": "voucherStatusHot",
+    "statusClass": "text-orange-500 dark:text-orange-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  },
+  {
+    "id": "voucherDomain1",
+    "logo": "https://placehold.co/40x40/f59e0b/ffffff?text=NC",
+    "statusKey": "voucherStatusNew",
+    "statusClass": "text-blue-600 dark:text-blue-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  },
+  {
+    "id": "voucherTemplate1",
+    "logo": "https://placehold.co/40x40/ec4899/ffffff?text=UI",
+    "statusKey": "voucherStatusActive",
+    "statusClass": "text-green-600 dark:text-green-400",
+    "type": "code",
+    "code": "KIMDEV25",
+    "link": null
+  },
+  {
+    "id": "voucherTemplate2",
+    "logo": "https://placehold.co/40x40/6366f1/ffffff?text=WP",
+    "statusKey": "voucherStatusExpiring",
+    "statusClass": "text-red-500 dark:text-red-400",
+    "type": "code",
+    "code": "PORTFOLIO15",
+    "link": null
+  },
+  {
+    "id": "voucherSoftware1",
+    "logo": "https://placehold.co/40x40/f59e0b/ffffff?text=S",
+    "statusKey": "voucherStatusNew",
+    "statusClass": "text-blue-600 dark:text-blue-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  },
+  {
+    "id": "voucherVpn1",
+    "logo": "https://placehold.co/40x40/4f46e5/ffffff?text=N",
+    "statusKey": "voucherStatusHot",
+    "statusClass": "text-orange-500 dark:text-orange-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  },
+  {
+    "id": "voucherVpn2",
+    "logo": "https://placehold.co/40x40/dc2626/ffffff?text=E",
+    "statusKey": "voucherStatusActive",
+    "statusClass": "text-green-600 dark:text-green-400",
+    "type": "link",
+    "code": null,
+    "link": "#"
+  }
+]

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title data-key="voucherPageTitle">Voucher | kimdevhere - Mã Giảm Giá & Ưu Đãi</title>
+    <meta id="meta-description" name="description" data-key="metaDescriptionVoucher" content="Khám phá các mã giảm giá và ưu đãi độc quyền dành cho các sản phẩm số, template và dịch vụ web. Tiết kiệm chi phí với các voucher từ kimdevhere." />
+    <meta id="meta-keywords" name="keywords" data-key="metaKeywordsVoucher" content="voucher, mã giảm giá, ưu đãi, affiliate, thu nhập thụ động, digital products, templates, web services" />
+    <meta name="author" content="kimdevhere" />
+
+    <link rel="canonical" href="https://your-domain.com/vi/voucher.html" />
+    <link rel="alternate" hreflang="vi" href="https://your-domain.com/vi/voucher.html" />
+    <link rel="alternate" hreflang="en" href="https://your-domain.com/en/voucher.html" />
+    <link rel="alternate" hreflang="ja" href="https://your-domain.com/ja/voucher.html" />
+    <link rel="alternate" hreflang="x-default" href="https://your-domain.com/en/voucher.html" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="../styles.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              jp: ["Noto Sans JP", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="flex flex-col min-h-screen bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-200 gradient-bg transition-colors duration-300" data-title-key="voucherPageTitle">
+    <div class="hidden md:block" id="spotlight"></div>
+
+    <header id="mobile-header" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white">
+                <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span>kimdev<span class="text-violet-500">here</span></span>
+            </a>
+            <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-600 dark:text-slate-400" aria-label="Toggle mobile menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+    </header>
+
+    <div id="mobile-nav-menu" class="lg:hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="absolute top-0 right-0 w-64 h-full bg-white dark:bg-slate-900 transform translate-x-full transition-transform duration-300">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <a href="index.html" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white"><svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg><span>kimdev<span class="text-violet-500">here</span></span></a>
+                    <button id="mobile-nav-close" class="p-2 text-slate-600 dark:text-slate-400" aria-label="Close mobile menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="index.html#skills" class="block py-3 px-4 rounded-lg" data-key="navSkills"></a>
+                    <a href="index.html#projects" class="block py-3 px-4 rounded-lg" data-key="navProjects"></a>
+                    <a href="index.html#services" class="block py-3 px-4 rounded-lg" data-key="navServices"></a>
+                </nav>
+                <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-700">
+                     <div class="relative">
+                        <button id="mobile-lang-switcher-button" type="button" class="w-full flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold rounded-lg text-sm p-2.5">
+                            <span id="mobile-lang-switcher-flag" class="text-base"></span><span class="nav-text" id="mobile-lang-switcher-text"></span><svg class="w-4 h-4 nav-text ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="mobile-lang-switcher-dropdown" class="hidden absolute bottom-full mb-2 w-full bg-white dark:bg-slate-800 rounded-md shadow-lg z-50">
+                            <a href="../vi/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm" data-lang="vi"><span class="w-6">🇻🇳</span> Vietnamese</a>
+                            <a href="../en/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm" data-lang="en"><span class="w-6">🇺🇸</span> English</a>
+                            <a href="../ja/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm" data-lang="ja"><span class="w-6">🇯🇵</span> 日本語</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header id="sidebar" class="fixed top-0 left-0 z-50 w-64 h-screen bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-r border-slate-200 dark:border-slate-800 transition-transform duration-300 -translate-x-full hidden lg:flex lg:translate-x-0">
+        <div class="flex flex-col h-full p-4 overflow-y-auto">
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-slate-900 dark:text-white mb-10 px-2 flex-shrink-0">
+                <svg class="w-8 h-8 text-violet-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <span id="logo-text" class="nav-text">kimdev<span class="text-violet-500 dark:text-violet-400">here</span></span>
+            </a>
+            <nav id="sidebar-nav" class="flex flex-col gap-2 flex-grow">
+                <a href="index.html" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white transition-colors duration-200"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
+                    <span class="nav-text" data-key="navHome"></span>
+                </a>
+                <a href="voucher.html" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg bg-slate-100 dark:bg-slate-800 text-violet-500 dark:text-violet-400 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5a.997.997 0 01.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>
+                    <span class="nav-text" data-key="navVoucher"></span>
+                </a>
+                <a href="index.html#contact" class="font-bold group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 flex-shrink-0 text-slate-500 group-hover:text-slate-800 dark:text-slate-400 dark:group-hover:text-white transition-colors duration-200"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                    <span class="nav-text" data-key="navContact"></span>
+                </a>
+            </nav>
+            <div id="sidebar-controls" class="mt-auto flex flex-col gap-2 flex-shrink-0">
+                <div class="relative">
+                    <button id="lang-switcher-button" type="button" class="w-full flex items-center gap-2 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 font-semibold rounded-lg text-sm p-2.5">
+                        <span id="lang-switcher-flag" class="text-base"></span>
+                        <span class="nav-text" id="lang-switcher-text"></span>
+                        <svg class="w-4 h-4 nav-text ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="lang-switcher-dropdown" class="hidden absolute bottom-full mb-2 w-full bg-white dark:bg-slate-800 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+                        <a href="../vi/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="vi"><span class="w-6">🇻🇳</span> Vietnamese</a>
+                        <a href="../en/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="en"><span class="w-6">🇺🇸</span> English</a>
+                        <a href="../ja/voucher.html" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700" data-lang="ja"><span class="w-6">🇯🇵</span> 日本語</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" type="button" class="w-full flex items-center justify-between text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-lg text-sm p-2.5">
+                    <div class="flex items-center gap-2 font-semibold">
+                        <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>
+                        <svg id="theme-toggle-light-icon" class="w-5 h-5" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.95-4.243-1.59-1.59M3 12h2.25m.386-6.364 1.591 1.591M12 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+                        <span class="nav-text" data-key="navThemeMobile"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex flex-col flex-grow ml-0 lg:ml-64 pt-16 lg:pt-0 transition-all duration-300" id="main-content">
+      <main class="flex-grow container mx-auto px-4 py-12 lg:py-16">
+        <section id="vouchers">
+            <div class="text-center mb-12 animated-entry">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 animated-gradient-text" data-key="voucherPageTitle"></h1>
+                <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto" data-key="voucherPageSubtitle"></p>
+            </div>
+
+            <div class="affiliate-banner animated-entry flex items-center gap-4">
+                <svg class="w-6 h-6 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" /></svg>
+                <p class="text-sm text-left"><strong data-key="affiliateDisclosureTitle"></strong> <span data-key="affiliateDisclosureText"></span></p>
+            </div>
+
+            <div class="how-to-use animated-entry">
+                <h3 data-key="howToUseTitle"></h3>
+                <div class="steps">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span data-key="howToStep1"></span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span data-key="howToStep2"></span>
+                    </div>
+                    <div>
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        <span data-key="howToStep3"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="voucher-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+                </div>
+        </section>
+      </main>
+      <footer class="flex-shrink-0 bg-slate-100 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center">
+                <p class="text-slate-500 dark:text-slate-400 text-sm" data-key="footerText"></p>
+            </div>
+        </div>
+      </footer>
+    </div>
+    
+    <nav id="mobile-tabbar" class="fixed bottom-0 left-0 right-0 lg:hidden z-50" aria-label="Điều hướng chính">
+        <div class="grid grid-cols-5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200/50 dark:border-slate-800/50 pb-safe">
+            <a href="index.html" class="tab-item" aria-label="Trang chủ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h7.5" /></svg>
+                <span data-key="navHomeMobile"></span>
+            </a>
+            <a href="index.html#projects" class="tab-item" aria-label="Dự án">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 012.012 1.244h3.256a2.25 2.25 0 012.012-1.244l.256-.512a2.25 2.25 0 012.012-1.244h3.86a.75.75 0 01.75.75v6.75a.75.75 0 01-.75.75H2.25a.75.75 0 01-.75-.75v-6.75a.75.75 0 01.75-.75zM12 9a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V9.75A.75.75 0 0112 9z" /></svg>
+                <span data-key="navProjectsMobile"></span>
+            </a>
+            <a href="voucher.html" class="tab-item active" aria-label="Voucher">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5a.997.997 0 01.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>
+                <span data-key="navVoucher"></span>
+            </a>
+            <a href="index.html#contact" class="tab-item" aria-label="Liên hệ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+                <span data-key="navContactMobile"></span>
+            </a>
+             <button type="button" id="theme-toggle-mobile" class="tab-item" aria-label="Chuyển đổi giao diện">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 dark:hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 hidden dark:block"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" /></svg>
+                <span data-key="navThemeMobile"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <script src="../js/main.js"></script>
+</body>
+</html>

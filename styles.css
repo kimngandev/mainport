@@ -798,6 +798,7 @@ body {
   }
   
   #project-grid {
+    height: 38em;
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 0.5rem;
@@ -821,3 +822,188 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.5); }
 .dark ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.2); }
 .dark ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
+
+/* === VOUCHER PAGE STYLES === */
+.affiliate-banner {
+  background-color: rgba(238, 242, 255, 0.8); /* indigo-50/80 */
+  border: 1px solid #c7d2fe; /* indigo-200 */
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.dark .affiliate-banner {
+  background-color: rgba(30, 41, 59, 0.7); /* slate-800/70 */
+  border-color: #334155; /* slate-700 */
+}
+.affiliate-banner svg {
+  color: #6366f1; /* indigo-500 */
+}
+.dark .affiliate-banner svg {
+  color: #a5b4fc; /* indigo-300 */
+}
+
+.how-to-use {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.dark .how-to-use {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(51, 65, 85, 0.8);
+}
+.how-to-use h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.how-to-use .steps {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.how-to-use .steps > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.how-to-use .steps svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #8b5cf6; /* violet-500 */
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+.dark .how-to-use .steps svg {
+  color: #c4b5fd; /* violet-300 */
+  background: rgba(139, 92, 246, 0.2);
+}
+.how-to-use .steps span {
+  font-size: 0.875rem;
+  color: #475569; /* slate-600 */
+}
+.dark .how-to-use .steps span {
+  color: #cbd5e1; /* slate-300 */
+}
+@media (max-width: 767px) {
+  .how-to-use .steps {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+
+.voucher-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.dark .voucher-card {
+  background-color: #1e293b; /* slate-800 */
+  border-color: #334155; /* slate-700 */
+}
+
+/* Slash background effect */
+.voucher-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+      transparent,
+      rgba(167, 139, 250, 0.2), /* a78bfa */
+      transparent 30%
+  );
+  animation: rotate 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.voucher-card:hover::before {
+  opacity: 1;
+}
+
+.voucher-card::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background-color: #ffffff; /* Re-apply background to cover the gradient */
+  border-radius: 0.7rem;
+  z-index: 1;
+}
+
+.dark .voucher-card::after {
+  background-color: #1e293b;
+}
+
+.voucher-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+@keyframes rotate {
+  100% {
+      transform: rotate(1turn);
+  }
+}
+
+
+.copy-code-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #f1f5f9; /* slate-100 */
+  color: #475569; /* slate-600 */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid #e2e8f0; /* slate-200 */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .copy-code-btn {
+  background-color: #334155; /* slate-700 */
+  color: #cbd5e1; /* slate-300 */
+  border-color: #475569; /* slate-600 */
+}
+
+.copy-code-btn:hover {
+  background-color: #e2e8f0; /* slate-200 */
+  border-color: #cbd5e1; /* slate-300 */
+}
+.dark .copy-code-btn:hover {
+  background-color: #475569; /* slate-600 */
+  border-color: #64748b; /* slate-500 */
+}
+
+.copy-code-btn .copy-icon { display: inline-block; }
+.copy-code-btn .check-icon { display: none; }
+
+.copy-code-btn.copied {
+  background-color: #10b981; /* emerald-500 */
+  color: white;
+  border-color: #10b981;
+}
+.copy-code-btn.copied .copy-icon { display: none; }
+.copy-code-btn.copied .check-icon { display: inline-block; }
