@@ -15,7 +15,8 @@
       name="keywords"
     />
     <meta content="kimdevhere" name="author" />
-  
+    <link rel="icon" type="image/x-icon" href="../image/logo_light.png">
+    
     <link rel="canonical" href="https://your-domain.com/vi/" />
     <link rel="alternate" hreflang="vi" href="https://your-domain.com/vi/" />
     <link rel="alternate" hreflang="en" href="https://your-domain.com/en/" />
@@ -41,20 +42,20 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Noto+Sans+JP:wght@400;500;700&amp;display=swap"
-      rel="stylesheet"
-    />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+   
+
     <script>
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
-              sans: ["Inter", "sans-serif"],
-              jp: ["Noto Sans JP", "sans-serif"],
+              sans: ["Exo 2",'Noto Sans JP', "sans-serif"], 
+              mono: ["Roboto Mono", "monospace"], 
             },
           },
         },
@@ -70,10 +71,7 @@
     <header id="mobile-header" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
         <div class="container mx-auto px-4 h-16 flex items-center justify-between">
             <a href="#home" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white" data-key="logo">
-                <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <span>kimdev<span class="text-violet-500">here</span></span>
+                  <img src="../image/logotextlight.png" class="w-24 ml-2" alt="">
             </a>
             <button id="mobile-menu-toggle" class="lg:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Toggle mobile menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,10 +86,7 @@
             <div class="p-6">
                 <div class="flex items-center justify-between mb-8">
                     <a href="#home" class="flex items-center gap-2 text-xl font-bold text-slate-900 dark:text-white" data-key="logo">
-                        <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                        <span>kimdev<span class="text-violet-500">here</span></span>
+                         <img src="../image/logotextlight.png" class="w-24 ml-2" alt="">
                     </a>
                     <button id="mobile-nav-close" class="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" aria-label="Close mobile menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
