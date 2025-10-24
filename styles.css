@@ -162,7 +162,6 @@ body {
     border: 2px solid var(--primary);
 }
 
-/* ✨ CHANGE: Hover effects are now only applied on devices that support hover. */
 @media (hover: hover) {
     .btn-primary:hover {
         background: #7c3aed;
@@ -211,7 +210,6 @@ body {
     background: #1e293b;
 }
 
-/* ✨ CHANGE: Hover effects are now only applied on devices that support hover. */
 @media (hover: hover) {
     .project-item:hover {
         transform: translateY(-12px) scale(1.02);
@@ -246,7 +244,6 @@ body {
     color: #94a3b8;
 }
 
-/* ✨ CHANGE: Hover effects are now only applied on devices that support hover. */
 @media (hover: hover) {
     .filter-btn:hover {
         border-color: var(--primary);
@@ -262,6 +259,12 @@ body {
 }
 
 /* Skill Item Styles */
+#skills{
+  
+}
+.skill{
+  display: none;
+}
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -272,14 +275,13 @@ body {
     transition: all var(--transition);
 }
 
-/* ✨ CHANGE: Hover effects are now only applied on devices that support hover. */
+
 @media (hover: hover) {
     .skill-item:hover {
         transform: translateY(-5px);
     }
 }
 
-/* Service Card Styles */
 .service-card {
     background: white;
     border-radius: 1rem;
@@ -340,7 +342,6 @@ body {
     color: #94a3b8;
 }
 
-/* ✨ CHANGE: Hover effects are now only applied on devices that support hover. */
 @media (hover: hover) {
     .service-card:hover {
         transform: translateY(-5px);
@@ -520,6 +521,9 @@ body {
 
 #mobile-nav-menu.active > div {
     transform: translateX(0);
+}
+#mobile-nav-menu #skills{
+  display: none;
 }
 
 /* --- Mobile Tabbar (Navigation) --- */
@@ -808,9 +812,9 @@ body {
     padding: 0.5rem;
   }
 }
-}
 
-/* ✨ ADDED: SVG background color now adapts to dark/light mode. */
+
+
 .chibi-bg {
     fill: url(#chibi-bg-gradient-light);
     transition: fill var(--transition);
@@ -1005,9 +1009,56 @@ body {
 .copy-code-btn .check-icon { display: none; }
 
 .copy-code-btn.copied {
-  background-color: #10b981; /* emerald-500 */
+  background-color: #10b981; 
   color: white;
   border-color: #10b981;
 }
 .copy-code-btn.copied .copy-icon { display: none; }
 .copy-code-btn.copied .check-icon { display: inline-block; }
+/* ========== Desktop Minimum Size ========== */
+@media screen and (min-width: 1024px) {
+    body {
+        min-width: 1280px;
+        min-height: 800px;
+    }
+}
+
+/* ========== REDESIGNED CONTACT SECTION ========== */
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem; /* 48px */
+    height: 3rem; /* 48px */
+    border-radius: 9999px; /* rounded-full */
+    background-color: #f1f5f9; /* slate-100 */
+    color: #475569; /* slate-600 */
+    transition: all 0.3s ease;
+}
+
+.dark .social-link {
+    background-color: #1e293b; /* slate-800 */
+    color: #cbd5e1; /* slate-300 */
+}
+
+.social-link:hover {
+    background-color: #8b5cf6; /* var(--primary) */
+    color: white;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+}
+
+.social-link svg {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+}
+
+/* ========== COMING SOON MODAL ========== */
+#coming-soon-modal.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#coming-soon-modal.visible #coming-soon-content {
+    transform: scale(1);
+}

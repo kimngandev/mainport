@@ -1,0 +1,47 @@
+[
+    {
+        "id": "product1",
+        "category": "kit",
+        "img": "https://placehold.co/600x400/c4b5fd/1e293b?text=UI+Kit"
+    },
+    {
+        "id": "product2",
+        "category": "template",
+        "img": "https://placehold.co/600x400/a5b4fc/1e293b?text=Web+Template"
+    },
+    {
+        "id": "product3",
+        "category": "icon",
+        "img": "https://placehold.co/600x400/f9a8d4/1e293b?text=Icon+Set"
+    },
+    {
+        "id": "product4",
+        "category": "template",
+        "img": "https://placehold.co/600x400/6ee7b7/1e293b?text=Admin+Dashboard"
+    },
+    {
+        "id": "product5",
+        "category": "kit",
+        "img": "https://placehold.co/600x400/fca5a5/1e293b?text=Mobile+UI+Kit"
+    },
+    {
+        "id": "product6",
+        "category": "icon",
+        "img": "https://placehold.co/600x400/fde047/1e293b?text=3D+Icons"
+    },
+    {
+        "id": "product7",
+        "category": "template",
+        "img": "https://placehold.co/600x400/a78bfa/1e293b?text=Blog+Template"
+    },
+    {
+        "id": "product8",
+        "category": "kit",
+        "img": "https://placehold.co/600x400/f472b6/1e293b?text=Design+System"
+    },
+    {
+        "id": "product9",
+        "category": "icon",
+        "img": "https://placehold.co/600x400/38bdf8/1e293b?text=Line+Icons"
+    }
+]

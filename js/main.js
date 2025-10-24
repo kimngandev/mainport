@@ -1,7 +1,6 @@
 // === PORTFOLIO WEBSITE - REFACTORED VERSION ===
 // Author: kimdevhere
 
-
 // === CONFIGURATION ===
 
 const CONFIG = {
@@ -18,6 +17,7 @@ let currentOpenProjectId = null;
 let typewriterTimeout;
 let isMobile = window.innerWidth < CONFIG.mobileBreakpoint;
 let projectData = [];
+let productData = [];
 let translations = {};
 
 // === UTILITY FUNCTIONS ===
@@ -36,20 +36,23 @@ function debounce(func, wait) {
 // === CORE FUNCTIONS ===
 async function loadData() {
     try {
-        const [projectsRes, translationsRes, vouchersRes] = await Promise.all([
+        const [projectsRes, translationsRes, vouchersRes, productsRes] = await Promise.all([
             fetch('../data/projects.json'),
             fetch('../data/translations.json'),
-            fetch('../data/vouchers.json')
+            fetch('../data/vouchers.json'),
+            fetch('../data/products.json')
         ]);
         projectData = await projectsRes.json();
         translations = await translationsRes.json();
         voucherData = await vouchersRes.json();
+        productData = await productsRes.json();
         return true;
     } catch (error) {
         console.error("Failed to load data:", error);
         return false;
     }
 }
+
 function renderVouchers() {
     const grid = document.getElementById('voucher-grid');
     if (!grid) return;
@@ -95,6 +98,28 @@ function renderVouchers() {
     updateDOMText();
 }
 
+function renderProducts() {
+    const grid = document.getElementById('product-grid');
+    if (!grid) return;
+
+    grid.innerHTML = productData.map(product => `
+        <div class="product-item bg-white dark:bg-slate-900/50 rounded-lg overflow-hidden group border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300" data-category="${product.category}">
+            <div class="overflow-hidden">
+                <img src="${product.img}" alt="${getText(`${product.id}.title`)}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${getText(`${product.id}.title`)}</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-4 h-16">${getText(`${product.id}.desc`)}</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-2xl font-bold text-violet-500 dark:text-violet-400">${getText(`${product.id}.price`)}</span>
+                    <a href="#" class="bg-violet-100 dark:bg-violet-900/50 text-violet-600 dark:text-violet-300 font-semibold px-5 py-2 rounded-lg hover:bg-violet-200 dark:hover:bg-violet-900 transition-colors">${getText('productBtnBuy')}</a>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+
 function getText(key) {
     const lang = CONFIG.lang;
     const value = key.split('.').reduce((obj, k) => (obj || {})[k], translations[lang]);
@@ -102,7 +127,6 @@ function getText(key) {
 }
 
 function updateDOMText() {
-    // Cập nhật footer text với năm hiện tại
     const footerText = `© ${new Date().getFullYear()} ${CONFIG.name}. ` + (CONFIG.lang === 'vi' ? 'Mọi quyền được bảo lưu.' : (CONFIG.lang === 'ja' ? '全著作権所有。' : 'All Rights Reserved.'));
     const footerEl = document.querySelector('[data-key="footerText"]');
     if (footerEl) footerEl.innerText = footerText;
@@ -124,17 +148,25 @@ function updateDOMText() {
         }
     });
     
-    document.title = getText('pageTitle');
+    const pageTitleKey = document.body.dataset.titleKey || 'pageTitle';
+    document.title = getText(pageTitleKey);
+
+    const metaDescKey = document.body.dataset.descKey || 'metaDescription';
+    const metaKeywordsKey = document.body.dataset.keywordsKey || 'metaKeywords';
+    
     const metaDesc = document.getElementById('meta-description');
     const metaKeywords = document.getElementById('meta-keywords');
-    if (metaDesc) metaDesc.setAttribute('content', getText('metaDescription'));
-    if (metaKeywords) metaKeywords.setAttribute('content', getText('metaKeywords'));
+    if (metaDesc) metaDesc.setAttribute('content', getText(metaDescKey));
+    if (metaKeywords) metaKeywords.setAttribute('content', getText(metaKeywordsKey));
 }
+
 
 function setLanguage(lang) {
     if (!translations[lang]) return;
     localStorage.setItem('language', lang);
-    window.location.pathname = `/${lang}/`;
+    const currentPath = window.location.pathname.split('/').filter(p => p);
+    const newPath = `/${lang}/${currentPath.slice(1).join('/')}`;
+    window.location.pathname = newPath;
 }
 
 
@@ -414,17 +446,88 @@ function initHeroAnimation() {
     animate();
 }
 
+// === CONTACT FORM SUBMISSION ===
+function handleContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
 
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const status = document.getElementById('form-status');
+        const data = new FormData(event.target);
+        
+        try {
+            const response = await fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                status.innerHTML = "Cảm ơn bạn đã gửi tin nhắn!";
+                status.className = 'text-green-500';
+                form.reset();
+            } else {
+                const responseData = await response.json();
+                if (Object.hasOwn(responseData, 'errors')) {
+                    status.innerHTML = responseData["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    status.innerHTML = "Oops! Đã có lỗi xảy ra.";
+                }
+                status.className = 'text-red-500';
+            }
+        } catch (error) {
+            status.innerHTML = "Oops! Đã có lỗi xảy ra.";
+            status.className = 'text-red-500';
+        }
+    }
+    form.addEventListener("submit", handleSubmit);
+}
+
+function setupComingSoonModal() {
+    const modal = document.getElementById('coming-soon-modal');
+    const closeBtn = document.getElementById('close-coming-soon-modal');
+    const voucherLinks = document.querySelectorAll('a[href="voucher.html"]');
+   
+    if (!modal || !closeBtn || voucherLinks.length === 0) return;
+
+    const openComingSoonModal = (event) => {
+        event.preventDefault();
+        modal.classList.remove('hidden');
+        setTimeout(() => modal.classList.add('visible'), 10);
+    };
+
+    const closeComingSoonModal = () => {
+        modal.classList.remove('visible');
+        setTimeout(() => modal.classList.add('hidden'), 300);
+    };
+
+    voucherLinks.forEach(link => {
+        link.addEventListener('click', openComingSoonModal);
+    });
+
+    closeBtn.addEventListener('click', closeComingSoonModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeComingSoonModal();
+        }
+    });
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.classList.contains('visible')) {
+            closeComingSoonModal();
+        }
+    });
+}
 // === INITIALIZATION ===
 document.addEventListener('DOMContentLoaded', async () => {
-       const dataLoaded = await loadData();
+    const dataLoaded = await loadData();
     if (!dataLoaded) {
         document.body.innerHTML = "<h1>Error: Could not load website data.</h1>";
         return;
     }
-    if (document.getElementById('voucher-grid')) {
-        renderVouchers();
-    }
+
     const savedTheme = localStorage.getItem('theme') || 
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     updateThemeUI(savedTheme);
@@ -434,7 +537,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
     if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
     
-    // Initialize Language Switcher
     const initializeLanguageSwitcher = (buttonId, dropdownId) => {
         const button = document.getElementById(buttonId);
         const dropdown = document.getElementById(dropdownId);
@@ -462,7 +564,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('mobile-lang-switcher-dropdown')?.classList.add('hidden');
     });
 
-    // Mobile Navigation Setup
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileNavClose = document.getElementById('mobile-nav-close');
     if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', toggleMobileMenu);
@@ -477,38 +578,51 @@ document.addEventListener('DOMContentLoaded', async () => {
             link.addEventListener('click', closeMobileMenu);
         });
     }
-
-    // Projects Setup
-    const projectFilters = document.getElementById('project-filters');
-    if (projectFilters) {
-        projectFilters.addEventListener('click', e => {
-            if (e.target.tagName === 'BUTTON') {
-                projectFilters.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                e.target.classList.add('active');
-                const filter = e.target.dataset.filter;
-                document.querySelectorAll('.project-item').forEach(item => {
-                    item.style.display = (filter === 'all' || item.dataset.category.includes(filter)) ? 'block' : 'none';
-                });
-            }
-        });
-    }
-
-    const projectGrid = document.getElementById('project-grid');
-    if (projectGrid) {
-        projectGrid.addEventListener('click', e => {
+    
+    if (document.getElementById('project-grid')) {
+        renderProjectCards();
+        const projectFilters = document.getElementById('project-filters');
+        if (projectFilters) {
+            projectFilters.addEventListener('click', e => {
+                if (e.target.tagName === 'BUTTON') {
+                    projectFilters.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const filter = e.target.dataset.filter;
+                    document.querySelectorAll('.project-item').forEach(item => {
+                        item.style.display = (filter === 'all' || item.dataset.category.includes(filter)) ? 'flex' : 'none';
+                    });
+                }
+            });
+        }
+        document.getElementById('project-grid').addEventListener('click', e => {
             const btn = e.target.closest('.btn[data-project-id]');
             if (btn) openModal(btn.dataset.projectId);
         });
     }
 
-    // Modal Setup
+    if (document.getElementById('product-grid')) {
+        renderProducts();
+        const productFilters = document.getElementById('product-filters');
+        if (productFilters) {
+            productFilters.addEventListener('click', e => {
+                if (e.target.tagName === 'BUTTON') {
+                    productFilters.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const filter = e.target.dataset.filter;
+                    document.querySelectorAll('.product-item').forEach(item => {
+                        item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+                    });
+                }
+            });
+        }
+    }
+
     const modalCloseBtn = document.getElementById('modal-close-btn');
     const projectModal = document.getElementById('project-detail-modal');
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
     if (projectModal) projectModal.addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === "Escape") closeModal(); });
 
-    // Intersection Observer for animations
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -523,7 +637,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         observer.observe(section);
     });
 
-    // Spotlight Effect
     const spotlight = document.getElementById('spotlight');
     if (spotlight) {
         document.addEventListener('mousemove', debounce(e => {
@@ -532,13 +645,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.body.addEventListener('mouseenter', () => spotlight.style.opacity = 1);
         document.body.addEventListener('mouseleave', () => spotlight.style.opacity = 0);
     }
-
     
-    // Initial UI render
     updateLangSwitcherUI(); 
     updateDOMText();
-    renderProjectCards();
     startTypewriter();
     initHeroAnimation();
-    
+    setupComingSoonModal();
 });
+
+
