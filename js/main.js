@@ -292,7 +292,7 @@ function renderProjectCards() {
             <div class="overflow-hidden relative">
                 <img src="${project.cardImg}" alt="${getText(`${project.id}.title`)}" 
                      class="w-full h-48 object-cover" 
-                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop';">
+                     onerror="this.onerror=null;this.src='../image/logo_dark.png';">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
             <div class="content">

@@ -2,54 +2,84 @@
     {
         "id": "proj1",
         "category": "dev uiux",
-        "cardImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "cardImg": "../image/web/image.png",
+        "detailImg": "../image/web/image.png",
         "tags": ["React", "Figma", "E-commerce"],
-        "liveLink": "#",
+        "liveLink": "https://gremarket.netlify.app/ ",
         "repoLink": "#"
     },
     {
         "id": "proj2",
-        "category": "uiux graphic",
-        "cardImg": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+        "category": "graphic",
+        "cardImg": "../image/web/2.png",
+        "detailImg": "../image/web/2.png",
         "tags": ["Branding", "Logo Design", "Identity"],
-        "liveLink": "#",
+        "liveLink": "https://paylink.vn/",
         "repoLink": "#"
     },
     {
         "id": "proj3",
-        "category": "dev",
-        "cardImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-        "tags": ["Vue.js", "Firebase", "PWA"],
-        "liveLink": "#",
+        "category": "dev uiux",
+        "cardImg": "../image/web/Screenshot 2025-10-25 154329.png",
+        "detailImg": "../image/web/Screenshot 2025-10-25 154329.png",
+        "tags": ["WordPress", "Figma"],
+        "liveLink": "https://skychainjsc.com/",
         "repoLink": "#"
     },
     {
         "id": "proj4",
-        "category": "graphic",
-        "cardImg": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop",
-        "tags": ["After Effects", "Motion Graphics", "Social Media"],
-        "liveLink": "#",
+        "category": "uiux graphic",
+        "cardImg": "../image/web/Screenshot 2025-10-25 155653.png",
+        "detailImg": "../image/web/Screenshot 2025-10-25 155653.png",
+        "tags": ["Figma", "Motion Graphics", "UI"],
+        "liveLink": "https://fundgo.network/meta-shop/",
         "repoLink": "#"
     },
     {
         "id": "proj5",
-        "category": "uiux",
-        "cardImg": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-        "tags": ["UX Research", "Mobile App", "Prototyping"],
-        "liveLink": "#",
+        "category": "uiux dev",
+        "cardImg": "../image/web/Screenshot 2025-10-25 162428.png",
+        "detailImg": "../image/web/Screenshot 2025-10-25 162428.png",
+        "tags": ["UX Research", "Prototyping"],
+        "liveLink": "https://customizedhouse.netlify.app/",
         "repoLink": "#"
     },
     {
         "id": "proj6",
         "category": "dev graphic",
-        "cardImg": "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=600&h=400&fit=crop",
-        "detailImg": "https://images.unsplash.com/photo-1551434678-e076c223a5ab?w=800&h=600&fit=crop",
+        "cardImg": "../image/web/screencapture-127-0-0-1-5500-landingpagetech-index-html-2025-09-25-14_09_01.png",
+        "detailImg": "../image/web/screencapture-127-0-0-1-5500-landingpagetech-index-html-2025-09-25-14_09_01.png",
         "tags": ["Next.js", "Landing Page", "Event Design"],
+        "liveLink": "https://techhorizondemo.netlify.app/#",
+        "repoLink": "#"
+    }
+    ,
+    {
+        "id": "proj7",
+        "category": "graphic",
+        "cardImg": "../image/web/Frame 6.png",
+        "detailImg": "../image/web/Frame 6.png",
+        "tags": [ "Flyer", "Event Design"],
+        "liveLink": "",
+        "repoLink": "#"
+    }
+    ,
+    {
+        "id": "proj8",
+        "category": "graphic",
+        "cardImg": "../image/web/screencapture-madiad-branding-kit-2023-09-08-23_12_35.png",
+        "detailImg": "../image/web/screencapture-madiad-branding-kit-2023-09-08-23_12_35.png",
+        "tags": [ "WordPress", "Web Design", "UI"],
+        "liveLink": "https://madiad.com/brand-kit/",
+        "repoLink": "#"
+    }
+       ,
+    {
+        "id": "proj9",
+        "category": "graphic uiux dev",
+        "cardImg": "../image/home.png",
+        "detailImg": "../image/home.png",
+        "tags": [ "WordPress", "Web Design", "UI"],
         "liveLink": "#",
         "repoLink": "#"
     }
